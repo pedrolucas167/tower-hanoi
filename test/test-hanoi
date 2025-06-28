@@ -1,0 +1,20 @@
+import unittest
+from hanoi import hanoi
+
+class TestHanoi(unittest.TestCase):
+    def test_hanoi_2_discos(self):
+        esperado = [
+            (1, 'A', 'B'),
+            (2, 'A', 'C'),
+            (1, 'B', 'C')
+        ]
+        self.assertEqual(hanoi(2, 'A', 'C', 'B'), esperado)
+
+    def test_hanoi_1_disco(self):
+        esperado = [
+            (1, 'A', 'C')
+        ]
+        self.assertEqual(hanoi(1, 'A', 'C', 'B'), esperado)
+
+if __name__ == '__main__':
+    unittest.main()
